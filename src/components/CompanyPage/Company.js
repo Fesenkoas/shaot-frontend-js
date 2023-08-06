@@ -1,21 +1,14 @@
 import React, { useEffect } from "react";
 import { Table } from "./Table";
 import { useDispatch, useSelector } from "react-redux";
-import { addNewCompany, getCompanyByIdFetch } from "../../future/action/fetchManager";
+import {getCompanyByIdFetch } from "../../future/action/fetchManager";
 
 export const Company = () => {
   const { company, loading } = useSelector((state) => state.manager);
   const dispatch = useDispatch();
-const newComp = {
-  "id": "1500",
-    "name": "Tempo",
-    "generalWage": 0.0,
-    "workers": [],
-    "shifts": []
-}
+
   useEffect(() => {
-    //dispatch(getCompanyByIdFetch("1200"));
-    dispatch(addNewCompany(newComp));
+    dispatch(getCompanyByIdFetch("1200"));
   }, [dispatch]);
   return (
     <div className="content flex flex-col">
