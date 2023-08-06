@@ -3,7 +3,7 @@ import { Table } from "./Table";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewCompany, getCompanyByIdFetch } from "../../future/action/fetchManager";
 
-export function Content() {
+export const Company = () => {
   const { company, loading } = useSelector((state) => state.manager);
   const dispatch = useDispatch();
 const newComp = {
@@ -14,8 +14,8 @@ const newComp = {
     "shifts": []
 }
   useEffect(() => {
-    dispatch(getCompanyByIdFetch("1200"));
-    // dispatch(addNewCompany(newComp));
+    //dispatch(getCompanyByIdFetch("1200"));
+    dispatch(addNewCompany(newComp));
   }, [dispatch]);
   return (
     <div className="content flex flex-col">

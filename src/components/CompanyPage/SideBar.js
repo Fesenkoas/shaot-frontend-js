@@ -13,7 +13,7 @@ export const Sidebar = () => {
         Get Company By Id
       </NavLink>
       <NavLink className="w-full p-3  text-cyan-50" to={"/company"}>
-        Workers
+        Add Company
       </NavLink>
     </div>
   );

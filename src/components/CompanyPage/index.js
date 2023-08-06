@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Content } from "./Content";
+import { Company } from "./Company";
+import {AddCompany} from "./AddCompany"
 import { LayoutManadger } from "./LayoutManager";
 
 
@@ -8,8 +9,8 @@ const index = () => {
   return (
     <LayoutManadger>
       <Routes>
-        <Route path="/" element={<Content />} />
-        <Route path="/company" element={<Content />} />
+        <Route path="/" element={<Company />} />
+        <Route path="/company" element={<AddCompany/>} />
       </Routes>
     </LayoutManadger>
   )
