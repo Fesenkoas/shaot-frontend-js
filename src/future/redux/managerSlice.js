@@ -14,11 +14,17 @@ const managerSlice = createSlice({
       state.company = action.payload;
       state.loading = true;
     },
+    getScheduleCompany(state, action) {
+      console.log(action.payload);
+      state.company = action.payload;
+      state.loading = true;
+    },
     loading(state, action) {
-      state.loading = action.payload.workers;
+      state.loading = action.payload;
     },
   },
 });
 
 export default managerSlice.reducer;
-export const { getCompanyById, loading } = managerSlice.actions;
+export const { getCompanyById, getScheduleCompany, loading } =
+  managerSlice.actions;

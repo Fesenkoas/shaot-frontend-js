@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 //import FileBase64 from "react-file-base64";
 import TextField from "@mui/material/TextField"
-import { addNewCompany } from "../../future/action/fetchManager";
+import { postNewCompany } from "../../future/action/fetchManager";
 
 export const AddCompany = () => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ export const AddCompany = () => {
         generalWage,
         password
     };
-    dispatch(addNewCompany(newComp));
+    dispatch(postNewCompany(newComp));
     setId("");
     setName("");
     setGeneralWage("");
