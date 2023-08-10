@@ -2,9 +2,10 @@ import React, { useEffect } from "react";
 import { Table } from "./Table";
 import { useDispatch, useSelector } from "react-redux";
 import {getCompanyByIdFetch } from "../../future/action/fetchManager";
+import { reduxManager } from "../../future/redux/managerSlice";
 
 export const Company = () => {
-  const { company, loading } = useSelector((state) => state.manager);
+  const { company, loading } = useSelector(reduxManager);
   const dispatch = useDispatch();
 
   useEffect(() => {

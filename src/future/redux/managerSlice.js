@@ -24,7 +24,7 @@ const managerSlice = createSlice({
     },
   },
 });
-
+export const reduxManager = (state) => state.manager;
 export default managerSlice.reducer;
 export const { getCompanyById, getScheduleCompany, loading } =
   managerSlice.actions;
