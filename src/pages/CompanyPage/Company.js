@@ -24,7 +24,7 @@ export const Company = () => {
   }, [dispatch]);
   return (
     <div>
-    <div className="flex flex-row justify-center h-screen">
+    <div className="flex flex-row justify-center">
       <div class="basis-1/2 w-[777px] h-[674px] bg-[#E7EFEE] m-3 rounded-xl">
         <div class="flex flex-row ">
           <div class="row-span-2 pl-10 pt-5  w-[50%]">
