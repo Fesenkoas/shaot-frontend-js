@@ -34,8 +34,8 @@ export const Company = () => {
             </p>
             <p className="text-[#99C2BD] text-base pt-3">{updateResult.id}</p>
             <p className="text-[#99C2BD] text-lg pt-10">Contact:</p>
-            <p className="text-[#99C2BD] text-xl pt-2">053 924 0009</p>
-            <p className="text-[#99C2BD] text-xl pt-1">
+            <p className="text-black text-xl pt-2">053 924 0009</p>
+            <p className="text-black text-xl pt-1">
               designerfesenko@gmail.com
             </p>
             <p className="text-[#99C2BD] text-lg font-bold pt-10">
