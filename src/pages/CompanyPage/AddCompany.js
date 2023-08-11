@@ -1,24 +1,26 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 //import FileBase64 from "react-file-base64";
-import TextField from "@mui/material/TextField"
+import { toast } from "react-toastify";
+import TextField from "@mui/material/TextField";
 import { postNewCompany } from "../../future/action/fetchManager";
+import { getMessage } from "../../future/redux/messageSlice";
 
 export const AddCompany = () => {
   const dispatch = useDispatch();
+  const { message } = useSelector((state) => state.message);
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [generalWage, setGeneralWage] = useState("");
   const [password, setPassword] = useState("");
   //const [image, setImage] = useState("");
- 
 
   const handleClickAdd = () => {
     const newComp = {
-        id,
-        name,
-        generalWage,
-        password
+      id,
+      name,
+      generalWage,
+      password,
     };
     dispatch(postNewCompany(newComp));
     setId("");
@@ -32,6 +34,14 @@ export const AddCompany = () => {
     setGeneralWage("");
     setPassword("");
   };
+
+  useEffect(() => {
+    if (message) {
+      toast(message);
+      console.log(message);
+      dispatch(getMessage(""));
+    }
+  }, [message, dispatch]);
 
   return (
     <div className="flex flex-row h-screen">

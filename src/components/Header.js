@@ -44,15 +44,6 @@ export const Header = () => {
       </span>
 
       <div className="flex jutify-center items-center text-2xl  px-4 py-2 mr-9 ">
-        {/* <button>
-          {isAuth ? (
-            <Link onClick={handleLogout} to={"/login"}>
-              Logout
-            </Link>
-          ) : (
-            <Link to={"/login"}>Login</Link>
-          )}
-        </button> */}
         <IconButton
           aria-label="more"
           id="long-button"
@@ -76,18 +67,28 @@ export const Header = () => {
           TransitionComponent={Fade}
         >
           <MenuItem>
-            <NavLink className="w-96 h-20 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5" to={"/"}>
+            <NavLink
+              className="w-96 h-20 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
+              to={"/"}
+            >
               Get Company By Id
             </NavLink>
           </MenuItem>
           <MenuItem>
-            <NavLink className="w-96 h-20 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5" to={"/company"}>
+            <NavLink
+              className="w-96 h-20 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
+              to={"/company"}
+            >
               Add Company
             </NavLink>
           </MenuItem>
           <MenuItem>
             {isAuth ? (
-              <Link className="w-96 h-20 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5" onClick={handleLogout} to={"/login"}>
+              <Link
+                className="w-96 h-20 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
+                onClick={handleLogout}
+                to={"/login"}
+              >
                 Logout
               </Link>
             ) : (

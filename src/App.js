@@ -1,15 +1,21 @@
 import React from "react";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import  CompanyPage  from "./pages/CompanyPage";
+import CompanyPage from "./pages/CompanyPage";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 //import  EmployeePage  from "./pages/EmployeePage";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/*" element={<CompanyPage />} />
-      {/* <Route path="" element={<EmployeePage />} /> */}
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/*" element={<CompanyPage />} />
+        {/* <Route path="" element={<EmployeePage />} /> */}
+      </Routes>
+      <ToastContainer position="top-center" />
+    </>
   );
 };
 

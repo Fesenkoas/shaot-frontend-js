@@ -34,6 +34,7 @@ export const postNewCompany = (newData) => (dispatch) =>{
   .then(data => {
     // Обрабатываем ответ от сервера
     console.log(data);
+    dispatch(getMessage(data.message));
   })
 };
 // Add Worker In Company

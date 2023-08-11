@@ -10,12 +10,10 @@ const managerSlice = createSlice({
   initialState,
   reducers: {
     getCompanyById(state, action) {
-      console.log(action.payload);
       state.company = action.payload;
       state.loading = true;
     },
     getScheduleCompany(state, action) {
-      console.log(action.payload);
       state.company = action.payload;
       state.loading = true;
     },
