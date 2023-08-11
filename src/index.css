@@ -2,13 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-
-.body {
-background-color: rgb(231, 231, 231);
-font-family: "Open Sans", sans-serif;
+@layer base {
+  .body {
+    background: #c4bfbf;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+  }
 }

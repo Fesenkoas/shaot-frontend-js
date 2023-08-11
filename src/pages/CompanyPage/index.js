@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { Company } from "./Company";
 import {AddCompany} from "./AddCompany"
 import { LayoutManadger } from "./LayoutManager";
-import './style.css'
+
 
 
 const index = () => {

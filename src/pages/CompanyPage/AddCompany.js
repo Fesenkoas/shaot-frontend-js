@@ -34,7 +34,7 @@ export const AddCompany = () => {
   };
 
   return (
-    <div className="content flex flex-row">
+    <div className="flex flex-row h-screen">
       <form onSubmit={(e) => e.preventDefault()} className=" p-3 basis-1/2">
         <label className="flex flex-col w-full ">
           <TextField
@@ -79,13 +79,13 @@ export const AddCompany = () => {
           <div className="flex gap-8 items-center justify-center mt-4">
             <button
               onClick={handleClickAdd}
-              className="flex justify-center items-center bg-gray-600 text-xs text-white rounded-sm py-2 px-4"
+              className="flex justify-center items-center bg-gray-600 text-xs text-white rounded-sm py-2 px-4 "
             >
               SAVE
             </button>
             <button
               onClick={handleClickCancel}
-              className="flex justify-center items-center bg-red-500 text-xs text-white rounded-sm py-2 px-4"
+              className="flex justify-center items-center bg-red-500 text-xs text-white rounded-sm py-2 px-4 "
             >
               CANCEL
             </button>

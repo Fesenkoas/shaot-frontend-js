@@ -12,7 +12,7 @@ export const Company = () => {
     dispatch(getCompanyByIdFetch("1200"));
   }, [dispatch]);
   return (
-    <div className="content flex flex-col">
+    <div className="content flex-row h-screen">
       <div className="p-3 text-2xl">{company.name} workers</div>
 
       <div>
