@@ -24,7 +24,7 @@ export const Header = () => {
     //toast('Logout');
   };
   return (
-    <div className="flex  h-24 py-4 justify-between items-center bg-[#E7EFEE]">
+    <div className="flex  h-20 py-4 justify-between items-center bg-[#E7EFEE]">
       <span className="flex jutify-center text-xl   text-white font-extrabold  pl-[134px] py-2">
         <svg
           width="86"
@@ -52,7 +52,7 @@ export const Header = () => {
           aria-haspopup="true"
           onClick={handleClick}
         >
-          <div className="text-5xl">
+          <div className="text-4xl">
             {open ? <FaBars /> : <FaBarsStaggered />}
           </div>
         </IconButton>
@@ -68,7 +68,7 @@ export const Header = () => {
         >
           <MenuItem>
             <NavLink
-              className="w-96 h-20 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
+              className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
               to={"/"}
             >
               Get Company By Id
@@ -76,7 +76,7 @@ export const Header = () => {
           </MenuItem>
           <MenuItem>
             <NavLink
-              className="w-96 h-20 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
+              className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
               to={"/company"}
             >
               Add Company
@@ -85,7 +85,7 @@ export const Header = () => {
           <MenuItem>
             {isAuth ? (
               <Link
-                className="w-96 h-20 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
+                className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
                 onClick={handleLogout}
                 to={"/login"}
               >

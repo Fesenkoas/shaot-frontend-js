@@ -4,12 +4,11 @@ import { Footer } from "./../../components/Footer";
 
 export const LayoutManadger = ({ children }) => {
   return (
-    <React.Fragment>
-      <div className="h-full">
+    
+      <div className=" h-[100%] w-[100%]">
         <Header />
         {children}
         <Footer />
       </div>
-    </React.Fragment>
   );
 };
