@@ -28,7 +28,7 @@ export const Company = () => {
   }, [dispatch]);
   return (
     <div>
-      <div className="flex flex-row justify-center h-full">
+      <div className="flex flex-row justify-center ">
         <div class="basis-1/2 w-[777px] h-[674px] bg-[#E7EFEE] m-3 rounded-xl">
           <div class="flex flex-row ">
             <div class="row-span-2 pl-10 pt-5  w-[50%]">
@@ -42,9 +42,10 @@ export const Company = () => {
               <p className="text-black text-xl pt-1">
                 designerfesenko@gmail.com
               </p>
-              <p className="text-[#99C2BD] text-lg font-bold pt-10">
-                Wage per hour:
+              <p className="text-black text-lg font-bold pt-10">
+                Wage per hour: <input type="text" className="border border-black w-14 h-10 text-center text-xl" value={"35"}/>
               </p>
+              
             </div>
             <div class="row-span-2">03</div>
           </div>

@@ -68,7 +68,7 @@ export const Header = () => {
         >
           <MenuItem>
             <NavLink
-              className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
+              className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-1"
               to={"/"}
             >
               Get Company By Id
@@ -76,7 +76,7 @@ export const Header = () => {
           </MenuItem>
           <MenuItem>
             <NavLink
-              className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
+              className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-1"
               to={"/company"}
             >
               Add Company
@@ -85,7 +85,7 @@ export const Header = () => {
           <MenuItem>
             {isAuth ? (
               <Link
-                className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-5"
+                className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-1"
                 onClick={handleLogout}
                 to={"/login"}
               >

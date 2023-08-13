@@ -5,10 +5,10 @@ import { Footer } from "./../../components/Footer";
 export const LayoutManadger = ({ children }) => {
   return (
     
-      <div className=" h-[100%] w-[100%]">
+      <div className="h-screen">
         <Header />
         {children}
-        <Footer />
+        
       </div>
   );
 };
