@@ -83,12 +83,12 @@ export const Company = () => {
               </Paper>
             </div>
             <div className="px-11 h-[295px]">
-              {loading &&
+              {loading?
                 company.workers.map((worker) => (
                   <p key={worker.id} onClick={() => handleUpdate(worker)}>
                     {worker.name}
                   </p>
-                ))}
+                )):"Loading....."}
             </div>
           </div>
         </div>
