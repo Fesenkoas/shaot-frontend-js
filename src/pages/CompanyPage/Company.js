@@ -28,8 +28,8 @@ export const Company = () => {
   }, [dispatch]);
   return (
     <div>
-      <div className="flex flex-row justify-center ">
-        <div class="basis-1/2 w-[777px] h-[674px] bg-[#E7EFEE] m-3 rounded-xl">
+      <div className="flex flex-row justify-center absolute">
+        <div class="basis-1/2 w-[70%] h-[%] bg-[#E7EFEE] m-3 rounded-xl">
           <div class="flex flex-row ">
             <div class="row-span-2 pl-10 pt-5  w-[50%]">
               <p className="text-[#99C2BD] text-lg ">Employee Information</p>
