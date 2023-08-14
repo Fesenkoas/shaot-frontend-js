@@ -27,8 +27,7 @@ export const Company = () => {
     dispatch(getCompanyByIdFetch("1200"));
   }, [dispatch]);
   return (
-    <div>
-      <div className="flex flex-row justify-center absolute">
+      <company className="flex flex-row justify-center">
         <div class="basis-1/2 w-[70%] h-[%] bg-[#E7EFEE] m-3 rounded-xl">
           <div class="flex flex-row ">
             <div class="row-span-2 pl-10 pt-5  w-[50%]">
@@ -92,7 +91,6 @@ export const Company = () => {
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </company>
   );
 };

@@ -44,7 +44,7 @@ export const AddCompany = () => {
   }, [message, dispatch]);
 
   return (
-    <div className="flex flex-row h-full">
+    <addcompany className="flex flex-row h-full">
       <form onSubmit={(e) => e.preventDefault()} className=" p-3 basis-1/2">
         <label className="flex flex-col w-full ">
           <TextField
@@ -105,6 +105,6 @@ export const AddCompany = () => {
       {/* <div className="h-screen p-3 basis-1/4">
         {image && <img src={image.image} alt={image.name} />}
       </div> */}
-    </div>
+    </addcompany>
   );
 };

@@ -7,7 +7,9 @@ export const LayoutManadger = ({ children }) => {
     
       <div>
         <Header />
+        <main>
         {children}
+        </main>
         <Footer/>
       </div>
   );

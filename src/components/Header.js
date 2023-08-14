@@ -24,7 +24,7 @@ export const Header = () => {
     //toast('Logout');
   };
   return (
-    <div className="flex  h-20 py-4 justify-between items-center bg-[#E7EFEE]">
+    <header className="flex  h-20 py-4 justify-between items-center bg-[#E7EFEE]">
       <span className="flex jutify-center text-xl   text-white font-extrabold  pl-[134px] py-2">
         <svg
           width="86"
@@ -97,6 +97,6 @@ export const Header = () => {
           </MenuItem>
         </Menu>
       </div>
-    </div>
+    </header>
   );
 };
