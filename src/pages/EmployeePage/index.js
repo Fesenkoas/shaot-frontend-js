@@ -4,9 +4,8 @@ import { useParams } from "react-router-dom";
 const Employee = () => {
   const { id } = useParams();
   const [employee, setEmployee] = useState(null);
-
   useEffect(() => {
-    fetch(`/employee/${id}`)
+    fetch(`https://shaotcloud.fly.dev/shaot/worker/${id}`)
       .then(response => response.json())
       .then(data => setEmployee(data))
       .catch(error => console.error("Error fetching employee data:", error));

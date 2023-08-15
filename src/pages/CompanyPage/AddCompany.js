@@ -44,7 +44,7 @@ export const AddCompany = () => {
   }, [message, dispatch]);
 
   return (
-    <addcompany className="flex flex-row h-full">
+    <addcompany className="flex flex-row justify-center">
       <form onSubmit={(e) => e.preventDefault()} className=" p-3 basis-1/2">
         <label className="flex flex-col w-full ">
           <TextField

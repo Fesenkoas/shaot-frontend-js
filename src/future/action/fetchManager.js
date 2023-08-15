@@ -18,6 +18,7 @@ export const getCompanyByIdFetch = (id) => (dispatch) => {
         console.log("error");
       return;
       }
+      console.log(data);
       dispatch(getCompanyById(data))});
 };
 // Create New Company
