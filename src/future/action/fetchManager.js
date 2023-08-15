@@ -14,11 +14,10 @@ export const getCompanyByIdFetch = (id) => (dispatch) => {
   fetch(`${baseURL}/company/${id}`, { method: "GET"})
     .then((res) => res.json())
     .then((data) => {
-      if(data.errorCode === 404){ 
+      if(data.errorCode === 500){ 
         console.log("error");
       return;
       }
-      console.log(data);
       dispatch(getCompanyById(data))});
 };
 // Create New Company
