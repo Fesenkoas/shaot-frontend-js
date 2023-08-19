@@ -9,6 +9,7 @@ export const getEmployeeByIdFetch = (id) => (dispatch) => {
   fetch(`${baseURL}/employee/${id}`, { method: "GET" })
     .then((res) => res.json())
     .then((data) => dispatch(getEmployeeById(data)));
+    //сделать проверку есть ли такой рабочии вывод сообщения в мессадж
 };
 
 export const postNewEmployee = (newData) => (dispatch) => {

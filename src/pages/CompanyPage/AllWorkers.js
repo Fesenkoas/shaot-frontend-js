@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
+import { Worker } from "../../components/Worker";
 import { useDispatch, useSelector } from "react-redux";
-import { reduxManager } from "../../future/redux/managerSlice";
-import { getCompanyByIdFetch } from "../../future/action/fetchManager";
 import { toast } from "react-toastify";
 import { getMessage } from "../../future/redux/messageSlice";
-import { Worker } from "../../components/Worker";
+import { getAllWorkersFetch } from "../../future/action/fetchAdmin";
 
-export const Company = () => {
-  const { loading, company } = useSelector(reduxManager);
+export const AllWorkers = () => {
+  const { workers, loading } = useSelector((state) => state.admin);
   const { message } = useSelector((state) => state.message);
   const dispatch = useDispatch();
 
@@ -15,13 +14,13 @@ export const Company = () => {
     toast(message);
     dispatch(getMessage(""));
   }
-  useEffect(() => {
-    dispatch(getCompanyByIdFetch("1700"));
-  }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(getAllWorkersFetch());
+  }, [dispatch]);
   return (
     <>
-      <Worker company={company.workers} loading={loading} />
+      <Worker company={workers} loading={loading} />
     </>
   );
 };

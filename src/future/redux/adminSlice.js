@@ -1,16 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
-  message: "",
+  loading: false,
+  workers: [],
 };
 
 const adminSlice = createSlice({
-  name: "message",
+  name: "admin",
   initialState,
   reducers: {
-    // getMessage(state, action) {
-    //   state.message = action.payload;
-    // },
+    getAllWorkers(state, action) {
+      state.workers = action.payload;
+      state.loading = true;
+    },
+    loading(state, action) {
+      state.loading = action.payload;
+    },
   },
 });
 export default adminSlice.reducer;
-export const { getMessage } = adminSlice.actions;
+export const { getAllWorkers, loading } = adminSlice.actions;
