@@ -11,7 +11,7 @@ const index = () => {
     <LayoutManadger>
       <Routes>
         <Route path="/" element={<Company />} />
-        <Route path="/company" element={<AddCompany/>} />
+        <Route path="/new" element={<AddCompany/>} />
       </Routes>
     </LayoutManadger>
   )

@@ -14,8 +14,8 @@ export const getCompanyByIdFetch = (id) => (dispatch) => {
   fetch(`${baseURL}/company/${id}`, { method: "GET"})
     .then((res) => res.json())
     .then((data) => {
-      if(data.errorCode === 500){ 
-        console.log("error");
+      if(data.errorCode){ 
+        dispatch(getMessage(data.message))
       return;
       }
       dispatch(getCompanyById(data))});

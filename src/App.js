@@ -11,7 +11,7 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/*" element={<CompanyPage />} />
+        <Route path="/company/*" element={<CompanyPage />} />
         {/* <Route path="/worker/:id" element={<EmployeePage />} /> */}
       </Routes>
       <ToastContainer position="top-center" />

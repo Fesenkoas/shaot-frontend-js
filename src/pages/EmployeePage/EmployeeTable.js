@@ -1,10 +1,10 @@
 import React from "react";
 import { BsTrash, BsPencilSquare } from "react-icons/bs";
-import { useDispatch } from "react-redux";
+// import { useDispatch } from "react-redux";
 //import { deleteItem } from "../../redux/action/itemsSlice";
 
 export const EmployeeTable = ({ employee }) => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleUpdate = () => {
     console.log("update " + employee.id);

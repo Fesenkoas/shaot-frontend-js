@@ -69,7 +69,7 @@ export const Header = () => {
           <MenuItem>
             <NavLink
               className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-1"
-              to={"/"}
+              to={"/company/"}
             >
               Get Company By Id
             </NavLink>
@@ -77,7 +77,7 @@ export const Header = () => {
           <MenuItem>
             <NavLink
               className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-1"
-              to={"/company"}
+              to={"/company/new"}
             >
               Add Company
             </NavLink>

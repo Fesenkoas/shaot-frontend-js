@@ -4,76 +4,108 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { reduxManager } from "../../future/redux/managerSlice";
 import { getCompanyByIdFetch } from "../../future/action/fetchManager";
-import { CompanyLeft } from "./components/CompanyLeft";
+import { toast } from "react-toastify";
+import { getMessage } from "../../future/redux/messageSlice";
 
 export const Company = () => {
   const [search, setSearch] = useState("");
-  const [updateResult, setUpdateResult] = useState("");
+  const [employee, setEmployee] = useState("");
+  const [wage, setWage] = useState("");
   const { company, loading } = useSelector(reduxManager);
-  console.log(company);
+  const { message } = useSelector((state) => state.message);
   const dispatch = useDispatch();
 
   const handleClickSearch = () => {
     const matchedWorkers = company.workers
       .filter((worker) => worker.name === search)
       .map((worker) => worker);
-    setUpdateResult(matchedWorkers[0]);
+    setEmployee(matchedWorkers[0]);
     setSearch("");
   };
 
   const handleUpdate = (item) => {
-    setUpdateResult(item);
+    setEmployee(item);
+    setWage(item.wage);
   };
-
+  if (message) {
+    toast(message);
+    console.log(message);
+    dispatch(getMessage(""));
+  }
   useEffect(() => {
     dispatch(getCompanyByIdFetch("1700"));
   }, [dispatch]);
+
   return (
-      <company className="flex flex-row justify-center">
-        <CompanyLeft employee={updateResult}/>
-        
-        <div className="flex-col m-3 ">
-          <button className="w-[380px] h-[80px] bg-[#99C2BD] mb-5 rounded-xl text-3xl font-bold text-white">
-            Send an invitation
-          </button>
-          <div class="basis-1/4 w-[380px] h-[572px] bg-[#E7EFEE] rounded-xl">
-            <div className="p-11 ">
-              <Paper
-                component="form"
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: 295,
-                  height: 46,
-                }}
+    <company className="flex flex-row justify-center">
+      <div class="basis-1/2 w-[70%] h-[%] bg-[#E7EFEE] m-3 rounded-xl">
+        <div class="flex flex-row ">
+          <div class="row-span-2 pl-10 pt-5  w-[50%]">
+            <p className="text-[#99C2BD] text-lg ">Employee Information</p>
+            <p className="text-[#99C2BD] text-3xl font-bold pt-8 ">
+              {employee.name}
+            </p>
+            <p className="text-[#99C2BD] text-base pt-3">{employee.id}</p>
+            <p className="text-[#99C2BD] text-lg pt-10">Contact:</p>
+            <p className="text-black text-xl pt-2">053 924 0009</p>
+            <p className="text-black text-xl pt-1">designerfesenko@gmail.com</p>
+            <p className="text-black text-lg font-bold pt-10">
+              Wage per hour:
+              <input
+                type="text"
+                className="border border-black w-14 h-10 text-center text-xl"
+                // onChange={(e) => setWage(e.target.value)}
+                value={wage}
+              />
+            </p>
+          </div>
+          <div class="row-span-2">03</div>
+        </div>
+      </div>
+
+      <div className="flex-col m-3 ">
+        <button className="w-[380px] h-[80px] bg-[#99C2BD] mb-5 rounded-xl text-3xl font-bold text-white">
+          Send an invitation
+        </button>
+        <div class="basis-1/4 w-[380px] h-[572px] bg-[#E7EFEE] rounded-xl">
+          <div className="p-11 ">
+            <Paper
+              component="form"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                width: 295,
+                height: 46,
+              }}
+            >
+              <InputBase
+                sx={{ ml: 1, flex: 1 }}
+                placeholder="Search"
+                inputProps={{ "aria-label": "search" }}
+                onChange={(e) => setSearch(e.target.value)}
+                value={search}
+              />
+              <IconButton
+                type="button"
+                sx={{ p: "10px" }}
+                aria-label="search"
+                onClick={handleClickSearch}
               >
-                <InputBase
-                  sx={{ ml: 1, flex: 1 }}
-                  placeholder="Search"
-                  inputProps={{ "aria-label": "search" }}
-                  onChange={(e) => setSearch(e.target.value)}
-                  value={search}
-                />
-                <IconButton
-                  type="button"
-                  sx={{ p: "10px" }}
-                  aria-label="search"
-                  onClick={handleClickSearch}
-                >
-                  <FaMagnifyingGlass />
-                </IconButton>
-              </Paper>
-            </div>
-            <div className="px-11 h-[295px]">
-              {loading?
-                company.workers.map((worker) => (
+                <FaMagnifyingGlass />
+              </IconButton>
+            </Paper>
+          </div>
+          <div className="px-11 h-[295px]">
+            {loading
+              ? company.workers.map((worker) => (
                   <p key={worker.id} onClick={() => handleUpdate(worker)}>
                     {worker.name}
                   </p>
-                )):"Loading....."}
-            </div>
+                ))
+              : "Loading....."}
           </div>
         </div>
-      </company>
+      </div>
+    </company>
   );
 };
