@@ -16,9 +16,11 @@ export const Worker = ({ loading, company }) => {
   };
 
   const handleClickSearch = () => {
+    if(search){
     const matchedWorkers = company.filter((worker) => worker.name === search);
     setEmployee(matchedWorkers[0]);
     setSearch("");
+    }
   };
 
   const handleUpdate = (item) => {
