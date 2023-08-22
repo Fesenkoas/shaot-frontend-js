@@ -2,13 +2,14 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 //import { useSelector } from "react-redux";
 //import { toast } from "react-toastify";
-//import { checkIsAuth, logout } from "./../redux/future/auth/authSlice";
 //import { useDispatch } from "react-redux";
 import { Fade, IconButton, Menu, MenuItem } from "@mui/material";
 import { FaBars, FaBarsStaggered } from "react-icons/fa6";
+import { useSelector } from "react-redux";
+import { checkIsAuth } from "../future/redux/authSlice";
 
 export const Header = () => {
-  const isAuth = true;
+  const isAuth = useSelector(checkIsAuth);
   //const dispatch = useDispatch();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -69,7 +70,7 @@ export const Header = () => {
           <MenuItem>
             <NavLink
               className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-1"
-              to={"/"}
+              to={"/company"}
             >
               Company
             </NavLink>
@@ -77,7 +78,7 @@ export const Header = () => {
           <MenuItem>
             <NavLink
               className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-1"
-              to={"/new"}
+              to={"/company/new"}
             >
               Add New Company
             </NavLink>
@@ -85,7 +86,7 @@ export const Header = () => {
           <MenuItem>
             <NavLink
               className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-1"
-              to={"/workers"}
+              to={"/company/workers"}
             >
               All Workers
             </NavLink>
@@ -95,12 +96,18 @@ export const Header = () => {
               <Link
                 className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-1"
                 onClick={handleLogout}
-                to={"/login"}
+                to={"/"}
               >
                 Logout
               </Link>
             ) : (
-              <Link to={"/login"}>Login</Link>
+              <Link
+                className="w-80 h-11 rounded-md border-solid border-2 border-[#22aca3] text-2xl text-black text-center p-1"
+                onClick={handleLogout}
+                to={"/"}
+              >
+                Login
+              </Link>
             )}
           </MenuItem>
         </Menu>
