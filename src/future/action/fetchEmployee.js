@@ -1,19 +1,24 @@
-// import {getUsers} from "../redux/userSlice";
-import { loading, getEmployeeById } from "../redux/employeeSlice";
-import { getMessage } from "../redux/messageSlice";
+import { getEmployeeById, setLoading } from "./employeeSlice";
+import { getMessage } from "./messageSlice";
 
 const baseURL = "https://shaotcloud.fly.dev/shaot";
 
 export const getEmployeeByIdFetch = (id) => (dispatch) => {
-  dispatch(loading(false));
+  dispatch(setLoading(true)); 
   fetch(`${baseURL}/employee/${id}`, { method: "GET" })
     .then((res) => res.json())
-    .then((data) => dispatch(getEmployeeById(data)));
-    //сделать проверку есть ли такой рабочии вывод сообщения в мессадж
+    .then((data) => {
+      dispatch(getEmployeeById(data));
+      dispatch(setLoading(false)); 
+    })
+    .catch((error) => {
+      console.error("Error fetching employee data:", error);
+      dispatch(setLoading(false)); 
+    });
 };
 
 export const postNewEmployee = (newData) => (dispatch) => {
-  dispatch(loading(false));
+  dispatch(setLoading(true)); 
   fetch(`${baseURL}/employee`, {
     method: "POST",
     headers: {
@@ -24,11 +29,16 @@ export const postNewEmployee = (newData) => (dispatch) => {
   .then(response => response.json())
   .then(data => {
     console.log(data);
+    dispatch(setLoading(false)); 
+  })
+  .catch((error) => {
+    console.error("Error posting new employee:", error);
+    dispatch(setLoading(false)); 
   });
 };
 
 export const putEmployeeCompany = (companyId, employeeId) => (dispatch) => {
-  dispatch(loading(false));
+  dispatch(setLoading(true)); 
   fetch(`${baseURL}/company/${companyId}/worker/${employeeId}`, {
     method: "PUT",
     headers: {
@@ -36,14 +46,28 @@ export const putEmployeeCompany = (companyId, employeeId) => (dispatch) => {
     },
   })
   .then(response => response.json())
-  .then(data => dispatch(getMessage(data.message)));
+  .then(data => {
+    dispatch(getMessage(data.message));
+    dispatch(setLoading(false)); 
+  })
+  .catch((error) => {
+    console.error("Error updating employee company:", error);
+    dispatch(setLoading(false)); 
+  });
 };
 
 export const getEmployeeSchedule = (id) => (dispatch) => {
-  dispatch(loading(false));
+  dispatch(setLoading(true)); 
   fetch(`${baseURL}/employee/${id}/schedule`, { method: "GET" })
     .then((res) => res.json())
-    .then((data) => dispatch(getEmployeeById(data)));
+    .then((data) => {
+      dispatch(getEmployeeById(data));
+      dispatch(setLoading(false));
+    })
+    .catch((error) => {
+      console.error("Error fetching employee schedule:", error);
+      dispatch(setLoading(false)); 
+    });
 };
 
 export const deleteEmployeeFromCompany = (companyId, employeeId) => (dispatch) => {
@@ -51,5 +75,8 @@ export const deleteEmployeeFromCompany = (companyId, employeeId) => (dispatch) =
   .then((response) => response.json())
   .then(data => {
     console.log(data);
+  })
+  .catch((error) => {
+    console.error("Error deleting employee from company:", error);
   });
 };

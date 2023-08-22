@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import TextField from "@mui/material/TextField";
-import { postNewEmployee, findEmployeeById } from "../../future/action/fetchManager"; // Replace with your data sending and finding functions
+import { postNewEmployee } from "../../future/action/fetchManager"; // Replace with your data sending function
 
 const Employee = () => {
   const dispatch = useDispatch();
@@ -23,19 +23,6 @@ const Employee = () => {
 
   const handleCancelClick = () => {
     resetFields();
-  };
-
-  const handleFindById = async () => {
-    if (id) {
-      const foundEmployee = await findEmployeeById(id); // Replace with your find function
-      if (foundEmployee) {
-        setName(foundEmployee.name);
-        setWage(foundEmployee.wage);
-        setPassword(foundEmployee.password);
-      } else {
-        // Handle case when employee is not found
-      }
-    }
   };
 
   const resetFields = () => {
@@ -93,13 +80,6 @@ const Employee = () => {
             </button>
 
             <button
-              onClick={handleFindById}
-              className="bg-blue-500 text-white py-2 px-4 rounded-sm"
-            >
-              FIND BY ID
-            </button>
-
-            <button
               onClick={handleCancelClick}
               className="bg-red-500 text-white py-2 px-4 rounded-sm"
             >
@@ -113,4 +93,3 @@ const Employee = () => {
 };
 
 export default Employee;
-

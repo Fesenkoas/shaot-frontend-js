@@ -1,41 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import TextField from "@mui/material/TextField";
-import { postNewEmployee, findEmployeeById } from "../../future/action/fetchManager"; // Replace with your data sending and finding functions
+import { getEmployeeByIdFetch} from "../../future/action/fetchEmployee";
+import { updateEmployee } from "../../future/action/updateEmployee";
 
-const Employee = () => {
+const UpdateEmployee = () => {
   const dispatch = useDispatch();
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [wage, setWage] = useState("");
   const [password, setPassword] = useState("");
+ 
 
-  const handleAddClick = () => {
-    const newEmployee = {
+  useEffect(() => {
+    if (id) {
+      dispatch(getEmployeeByIdFetch(id));
+    }
+  }, [id, dispatch]);
+
+  const handleUpdateClick = () => {
+    const updatedEmployee = {
       id,
       name,
       wage,
       password,
     };
-    dispatch(postNewEmployee(newEmployee)); // Replace with your data sending function
+    dispatch(updateEmployee(id, updatedEmployee));
     resetFields();
   };
 
   const handleCancelClick = () => {
     resetFields();
-  };
-
-  const handleFindById = async () => {
-    if (id) {
-      const foundEmployee = await findEmployeeById(id); // Replace with your find function
-      if (foundEmployee) {
-        setName(foundEmployee.name);
-        setWage(foundEmployee.wage);
-        setPassword(foundEmployee.password);
-      } else {
-        // Handle case when employee is not found
-      }
-    }
   };
 
   const resetFields = () => {
@@ -86,17 +81,10 @@ const Employee = () => {
 
           <div className="flex gap-8 items-center justify-center mt-4">
             <button
-              onClick={handleAddClick}
-              className="bg-gray-600 text-white py-2 px-4 rounded-sm"
+              onClick={handleUpdateClick}
+              className="bg-blue-600 text-white py-2 px-4 rounded-sm"
             >
-              SAVE
-            </button>
-
-            <button
-              onClick={handleFindById}
-              className="bg-blue-500 text-white py-2 px-4 rounded-sm"
-            >
-              FIND BY ID
+              UPDATE
             </button>
 
             <button
@@ -112,5 +100,5 @@ const Employee = () => {
   );
 };
 
-export default Employee;
+export default UpdateEmployee;
 
