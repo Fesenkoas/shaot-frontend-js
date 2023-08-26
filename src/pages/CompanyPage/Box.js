@@ -15,7 +15,7 @@ export const Box = ({ isActive, onBoxClick }) => {
         }`}
       >
         <div className=" text-white font-bold leading-5 whitespace-nowrap absolute top-[15px] left-[20px]">
-          ВТ
+          Data Day
         </div>
       </div>
 
