@@ -27,8 +27,11 @@ export const Box = ({ isActive, onBoxClick }) => {
               <span className="font-light">смена</span>
             </p>
           </div>
-
-          <div>1</div>
+          <div className="flex flex-col w-full">
+            <div className="flex flex-row mt-2 border  ">{isActive ?' Ivanov': '1'}</div>
+            <div>1</div>
+            <div>1</div>
+          </div>
         </div>
         <div className="flex flex-row mt-2 border">
           <div className="bg-[#99C2BD] h-[115px] w-[42px] flex items-center justify-center ">
