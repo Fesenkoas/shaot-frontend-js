@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box } from "./Box";
+import { shift } from "../../unit/shift";
 
 export const Boxs = () => {
   const [activeBox, setActiveBox] = useState(0);
@@ -13,8 +14,13 @@ export const Boxs = () => {
       <div className="border w-[1100px] h-[499px] relative bg-[#E7EFEE]">
         <h1 className="text-3xl font-bold ml-4 mt-1">Week</h1>
         <div className="flex space-x-4 m-4">
-          {[0, 1, 2, 3, 4, 5, 6].map((boxIndex) => (
-            <Box key={boxIndex} onBoxClick={() => handleBoxClick(boxIndex)}  isActive={activeBox === boxIndex}/>
+          {shift.map((shift, index) => (
+            <Box
+              day={shift.day}
+              key={index}
+              onBoxClick={() => handleBoxClick(index)}
+              isActive={activeBox === index}
+            />
           ))}
         </div>
       </div>
