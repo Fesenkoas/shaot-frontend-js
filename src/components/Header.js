@@ -10,7 +10,7 @@ import { checkIsAuth } from "./../future/redux/authSlice";
 const navigation = [
   { name: "Company", href: "/company" },
   { name: "Workers", href: "/company/workers" },
-  { name: "Create Company", href: "/company/new" },
+  { name: "Week", href: "/company/new" },
   
 ];
 
