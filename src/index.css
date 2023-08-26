@@ -11,5 +11,6 @@
   .body {
     background: #c4bfbf;
     font-family: 'Poppins', sans-serif;
+    height: 100%;
   }
 }

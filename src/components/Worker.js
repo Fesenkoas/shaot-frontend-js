@@ -9,7 +9,7 @@ export const Worker = ({ loading, company }) => {
   const [search, setSearch] = useState("");
   const [employee, setEmployee] = useState("");
   const [wage, setWage] = useState("");
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleInvitation = () => {
    dispatch(putEmployeeCompany(1700,employee.id))
@@ -31,7 +31,7 @@ export const Worker = ({ loading, company }) => {
   };
   return (
     <div className="flex flex-row justify-center">
-      <div className="basis-1/2 w-[70%] h-[%] bg-[#E7EFEE] m-3 rounded-xl">
+      <div className="basis-1/2 w-[70%] bg-[#E7EFEE] m-3 rounded-xl">
         <div className="flex flex-row ">
           <div className="row-span-2 pl-10 pt-5  w-[50%]">
             <p className="text-[#99C2BD] text-lg ">Employee Information</p>

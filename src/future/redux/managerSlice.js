@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   company: [],
+  schedule:[],
 };
 
 const managerSlice = createSlice({
@@ -17,6 +18,10 @@ const managerSlice = createSlice({
       state.company = action.payload;
       state.loading = true;
     },
+    сompanySchedule(state, action){
+      state.schedule = action.payload;
+      state.loading = true;
+    },
     loading(state, action) {
       state.loading = action.payload;
     },
@@ -24,5 +29,5 @@ const managerSlice = createSlice({
 });
 export const reduxManager = (state) => state.manager;
 export default managerSlice.reducer;
-export const { getCompanyById, getScheduleCompany, loading } =
+export const { getCompanyById, getScheduleCompany,сompanySchedule, loading } =
   managerSlice.actions;

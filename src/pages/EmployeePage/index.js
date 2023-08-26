@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { LayoutManadger } from "../CompanyPage/LayoutManager";
+import { LayoutManadger } from "../../components/LayoutManager";
 
 const Employee = () => {
   const { id } = useParams();
   const [employee, setEmployee] = useState(null);
   useEffect(() => {
-    fetch(`https://shaotcloud.fly.dev/shaot/worker/${1}`)
+    fetch(`https://shaotcloud.fly.dev/shaot/worker/${13}`)
       .then(response => response.json())
       .then(data => setEmployee(data))
       .catch(error => console.error("Error fetching employee data:", error));

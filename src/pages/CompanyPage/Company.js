@@ -20,8 +20,6 @@ export const Company = () => {
   }, [dispatch]);
 
   return (
-    <>
       <Worker company={company.workers} loading={loading} />
-    </>
   );
 };

@@ -1,5 +1,5 @@
 import React from 'react'
-import { LayoutManadger } from '../CompanyPage/LayoutManager'
+import { LayoutManadger } from '../../components/LayoutManager'
 import { Route, Routes } from 'react-router'
 import { Login } from './Login'
 

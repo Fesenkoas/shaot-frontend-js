@@ -1,13 +1,8 @@
-import { loading, getCompanyById } from "../redux/managerSlice";
+import { loading, getCompanyById, сompanySchedule } from "../redux/managerSlice";
 import { getMessage } from "../redux/messageSlice";
 
 const baseURL = "https://shaotcloud.fly.dev/shaot";
 
-// const instanseGet = {
-//   mode: 'cors',
-//   credentials: "include",
-//   method: "GET",
-// };
 //Get Company By Id
 export const getCompanyByIdFetch = (id) => (dispatch) => {
   dispatch(loading(false));
@@ -20,6 +15,7 @@ export const getCompanyByIdFetch = (id) => (dispatch) => {
       }
       dispatch(getCompanyById(data))});
 };
+
 // Create New Company
 export const postNewCompany = (newData) => (dispatch) =>{
   dispatch(loading(false));
@@ -37,6 +33,7 @@ export const postNewCompany = (newData) => (dispatch) =>{
     dispatch(getMessage(data.message));
   })
 };
+
 // Add Worker In Company
 export const putEmployeeCompany = (id, employee) => (dispatch) =>{
   dispatch(loading(false));
@@ -55,7 +52,7 @@ export const getCompanySchedule = (id) => (dispatch) => {
   dispatch(loading(false));
   fetch(`${baseURL}/company/${id}/schedule`, { method: "GET"})
     .then((res) => res.json())
-    .then((data) => dispatch(getCompanyById(data)));
+    .then((data) => dispatch(сompanySchedule(data)));
 };
 
 //Delete Worker From Company

@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 //import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
@@ -34,21 +34,23 @@ export const Login = () => {
   }, [status, isAuth, navigate]);
 
   return (
-    <div className="w-1/4 h-60 mx-auto mt-40">
-      <button
-        onClick={handleManager}
-        className="w-[380px] h-[80px] bg-[#99C2BD] mb-5 rounded-xl text-3xl font-bold text-white"
-      >
-        Login as Manager
-      </button>
+    <div className="flex justify-center">
+      <div className="flex flex-col">
+        <button
+          onClick={handleManager}
+          className="w-[380px] h-[80px] bg-[#99C2BD] mb-5 rounded-xl text-3xl font-bold text-white"
+        >
+          Login as Manager
+        </button>
 
-      <button
-        // disabled
-        onClick={handleWorker}
-        className="w-[380px] h-[80px] bg-[#99C2BD] mb-5 rounded-xl text-3xl font-bold text-white"
-      >
-        Login as Worker
-      </button>
+        <button
+          // disabled
+          onClick={handleWorker}
+          className="w-[380px] h-[80px] bg-[#99C2BD] mb-5 rounded-xl text-3xl font-bold text-white"
+        >
+          Login as Worker
+        </button>
+      </div>
     </div>
     // <form
     //   onSubmit={(e) => e.preventDefault()}
