@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { LayoutManadger } from "../../components/LayoutManager";
 
 const Employee = () => {
   const { id } = useParams();
@@ -13,7 +12,7 @@ const Employee = () => {
   }, [id]);
 
   return (
-    <LayoutManadger>
+   
     <div className="container mx-auto p-4">
       <h2 className="text-2xl font-semibold mb-4">Employee Details</h2>
       {employee ? (
@@ -25,7 +24,6 @@ const Employee = () => {
         <p>Loading employee data...</p>
       )}
     </div>
-    </LayoutManadger>
   );
 };
 
