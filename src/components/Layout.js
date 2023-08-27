@@ -23,8 +23,8 @@ export const Layout = ({ children }) => {
           }}
         />
       </div>
-      <div className="relative isolate px-6 pt-14 lg:px-8">
-        <div className="mx-auto max-w-fullxl py-4 sm:py-6 lg:py-10">
+      <div className="container mx-auto">
+        <div className="relative isolate px-6 pt-14 lg:px-8">
           <div>{children}</div>
         </div>
       </div>
