@@ -167,7 +167,7 @@ export const Company = () => {
         </div>
         <div className="flex flex-col basis-1/4 border justify-between p-4 m-1 ">
           <div className="p-4 m-2 bg-[#E7EFEE]">
-            <>02</>
+            <>виборо когда будет алармДэй</>
           </div>
           <div className=" p-4 m-2 bg-[#E7EFEE]">
             <h1 className=" text-center ">What are the working days?</h1>
