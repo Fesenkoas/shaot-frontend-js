@@ -1,44 +1,36 @@
 import React, { useState } from "react";
 import { FaTrashCan } from "react-icons/fa6";
+import { dayWeek } from "../../unit/variables";
 
-// const day = {
-//   weekStart: "2023-08-27",
-//   weekEnd: "2023-09-02",
-//   shiftsTime: [
-//     {
-//       start: "07:00:00",
-//       end: "15:00:00",
-//       workersNumberPerShift: 3,
-//     },
-//     {
-//       start: "15:00:00",
-//       end: "23:00:00",
-//       workersNumberPerShift: 3,
-//     },
-//     {
-//       start: "23:00:00",
-//       end: "07:00:00",
-//       workersNumberPerShift: 3,
-//     },
-//   ],
-//   workDays: [
-//     "monday",
-//   ],
-// };
+
 
 export const Company = () => {
-  const [count, setCount] = useState(3);
-  const [table, setTable] = useState([0]);
-  const [start, setStart] = useState("7:00");
-  const [end, SetEnd] = useState("15:00");
+  const [count, setCount] = useState(1);
+  const [table, setTable] = useState([]);
+  const [start, setStart] = useState();
+  const [end, SetEnd] = useState();
   const [selectedDays, setSelectedDays] = useState([]);
-  console.log(table);
+  const [workersNumber, setWorkersNumber] = useState(0);
+
+  const clear = () => {
+    setWorkersNumber(0);
+    setStart("");
+    SetEnd("");
+  };
   const addTable = () => {
-    setTable((prevTable) => [...prevTable, +1]);
+    const newItem = {
+      start,
+      end,
+      workersNumberPerShift: workersNumber,
+    };
+    clear();
+    setCount(count + 1);
+    setTable((prevTable) => [...prevTable, newItem]);
   };
   const deleteTable = (key) => {
     const newArr = table.filter((items, index) => index !== key);
     setTable(newArr);
+    setCount(count - 1);
   };
 
   const handleCheckboxChange = (event) => {
@@ -52,8 +44,8 @@ export const Company = () => {
   return (
     <>
       <div className="flex flex-row justify-center">
-        <div className="basis-1/2 p-4 m-1 ">
-          <table className="border-separate border-spacing-x-16 border-spacing-y-10 ">
+        <div className=" p-4 m-1 overflow-y-auto h-96">
+          <table className="border-separate border-spacing-x-7 border-spacing-y-10 ">
             <thead>
               <tr>
                 <th className=" w-20 h-12 rounded-xl bg-[#E7EFEE]">Shifts</th>
@@ -69,51 +61,35 @@ export const Company = () => {
               {/* block for map */}
               {table.map((item, key) => (
                 <tr>
-                  <td className=" w-20 h-12 rounded-xl bg-[#E7EFEE] text-center text-2xl">
-                    {key + 1}
+                  <td className="text-center">
+                    <div className=" w-20 h-12 rounded-xl bg-[#E7EFEE] text-center text-2xl">
+                      {key + 1}
+                    </div>
                   </td>
-                  <td className="border rounded-xl ">
+                  <td className="text-center">
                     <input
                       type="text"
-                      value={start}
-                      onChange={(e) => setStart(e.target.value)}
-                      className="text-center w-32 h-12 rounded-xl text-2xl"
+                      disabled
+                      value={item.start}
+                      className="border rounded-xl w-28 h-12 text-2xl text-center"
                     />
                   </td>
-                  <td className="border rounded-xl">
+                  <td className="text-center">
                     <input
                       type="text"
-                      value={end}
-                      onChange={(e) => SetEnd(e.target.value)}
-                      className="text-center w-32 h-12 rounded-xl text-2xl"
+                      disabled
+                      value={item.end}
+                      className="border text-center w-28 h-12 rounded-xl text-2xl"
                     />
                   </td>
-                  <td>
+                  <td className="text-center">
                     <div className="flex flex-row justify-center ">
-                      <button
-                        onClick={(e) => setCount(count > 0 ? count - 1 : count)}
-                        className="p-2 text-2xl"
-                      >
-                        -
-                      </button>
                       <input
                         type="text"
-                        value={count}
-                        onChange={(e) =>
-                          setCount(
-                            e.target.value <= 10 ? e.target.value : count
-                          )
-                        }
+                        disabled
+                        value={item.workersNumberPerShift}
                         className="border rounded-xl text-center text-2xl w-14"
                       />
-                      <button
-                        onClick={(e) =>
-                          setCount(count < 10 ? count + 1 : count)
-                        }
-                        className="p-2 text-2xl"
-                      >
-                        +
-                      </button>
                     </div>
                   </td>
                   <td className="text-center text-2xl">
@@ -123,6 +99,63 @@ export const Company = () => {
                   </td>
                 </tr>
               ))}
+              <tr>
+                <td className="text-center">
+                  <div className=" w-20 h-12 rounded-xl bg-[#E7EFEE] text-center text-2xl">
+                    {count}
+                  </div>
+                </td>
+                <td className="text-center">
+                  <input
+                    type="text"
+                    value={start}
+                    onChange={(e) => setStart(e.target.value)}
+                    className="border rounded-xl w-28 h-12 text-2xl text-center"
+                  />
+                </td>
+                <td className="text-center">
+                  <input
+                    type="text"
+                    value={end}
+                    onChange={(e) => SetEnd(e.target.value)}
+                    className="border text-center w-28 h-12 rounded-xl text-2xl"
+                  />
+                </td>
+                <td className="text-center">
+                  <div className="flex flex-row justify-center ">
+                    <button
+                      onClick={(e) =>
+                        setWorkersNumber(
+                          workersNumber > 0 ? workersNumber - 1 : workersNumber
+                        )
+                      }
+                      className="p-2 text-2xl"
+                    >
+                      -
+                    </button>
+                    <input
+                      type="text"
+                      value={workersNumber}
+                      onChange={(e) =>
+                        setWorkersNumber(
+                          e.target.value <= 10 ? e.target.value : workersNumber
+                        )
+                      }
+                      className="border rounded-xl text-center text-2xl w-14"
+                    />
+                    <button
+                      onClick={(e) =>
+                        setWorkersNumber(
+                          workersNumber < 10 ? workersNumber + 1 : workersNumber
+                        )
+                      }
+                      className="p-2 text-2xl"
+                    >
+                      +
+                    </button>
+                  </div>
+                </td>
+              </tr>
               {/* ---------------- */}
               <tr>
                 <td className=" w-20 h-12 rounded-xl bg-[#E7EFEE] text-center text-2xl">
@@ -132,81 +165,26 @@ export const Company = () => {
             </tbody>
           </table>
         </div>
-
-        <div className="basis-1/4 border  bg-[#E7EFEE] p-4 m-1 ">02</div>
-      </div>
-      <div className="flex flex-row justify-evenly ">
-        <div className="basis-1/2 p-4 m-2 bg-[#E7EFEE]">01</div>
-        <div className=" flex flex-row basis-1/4 p-4 m-2 bg-[#E7EFEE]">
-          <div className="flex flex-col text-center">
-            Mon
-            <input
-              type="checkbox"
-              value="monday"
-              checked={selectedDays.includes("monday")}
-              onChange={handleCheckboxChange}
-              className="w-10 h-10 m-1"
-            />
+        <div className="flex flex-col basis-1/4 border justify-between p-4 m-1 ">
+          <div className="p-4 m-2 bg-[#E7EFEE]">
+            <>02</>
           </div>
-          <div className="flex flex-col text-center">
-            Tu
-            <input
-              type="checkbox"
-              value="tuesday"
-              checked={selectedDays.includes("tuesday")}
-              onChange={handleCheckboxChange}
-              className="w-10 h-10 m-1"
-            />
-          </div>
-          <div className="flex flex-col text-center">
-            Wed
-            <input
-              type="checkbox"
-              value="wednesday"
-              checked={selectedDays.includes("wednesday")}
-              onChange={handleCheckboxChange}
-              className="w-10 h-10 m-1"
-            />
-          </div>
-          <div className="flex flex-col text-center">
-            Thu
-            <input
-              type="checkbox"
-              value="thursday"
-              checked={selectedDays.includes("thursday")}
-              onChange={handleCheckboxChange}
-              className="w-10 h-10 m-1"
-            />
-          </div>
-          <div className="flex flex-col text-center">
-            Fri
-            <input
-              type="checkbox"
-              value="friday"
-              checked={selectedDays.includes("friday")}
-              onChange={handleCheckboxChange}
-              className="w-10 h-10 m-1"
-            />
-          </div>
-          <div className="flex flex-col text-center">
-            Sat
-            <input
-              type="checkbox"
-              value="saturday"
-              checked={selectedDays.includes("saturday")}
-              onChange={handleCheckboxChange}
-              className="w-10 h-10 m-1"
-            />
-          </div>
-          <div className="flex flex-col text-center">
-            Sun
-            <input
-              type="checkbox"
-              value="sunday"
-              checked={selectedDays.includes("sunday")}
-              onChange={handleCheckboxChange}
-              className="w-10 h-10 m-1"
-            />
+          <div className=" p-4 m-2 bg-[#E7EFEE]">
+            <h1 className=" text-center ">What are the working days?</h1>
+            <div className="flex flex-row">
+              {dayWeek.map((d, key) => (
+                <div key={key} className="flex flex-col text-center">
+                  {d.short}
+                  <input
+                    type="checkbox"
+                    value={d.full}
+                    checked={selectedDays.includes(d.full)}
+                    onChange={handleCheckboxChange}
+                    className=" w-10 h-10 m-1"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
