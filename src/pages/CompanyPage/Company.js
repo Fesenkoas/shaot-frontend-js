@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { FaTrashCan } from "react-icons/fa6";
 import { BsCalendar2Plus, BsTrash3 } from "react-icons/bs";
 import {
   getWeekConfigurate,
