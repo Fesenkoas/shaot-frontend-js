@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaTrashCan } from "react-icons/fa6";
+import { BsCalendar2Plus, BsTrash3 } from "react-icons/bs";
 import {
   getWeekConfigurate,
   putConfigurateSchedule,
@@ -122,16 +123,16 @@ export const Company = () => {
                     </td>
                     <td className="text-center text-2xl">
                       <button onClick={() => deleteTable(key)}>
-                        <FaTrashCan />
+                        <BsTrash3 />
                       </button>
                     </td>
                   </tr>
                 ))}
               <tr>
-                <td className="text-center">
-                  <div className=" w-20 h-12 rounded-xl bg-[#E7EFEE] text-center text-2xl">
-                    {count}
-                  </div>
+                <td className="w-20 h-12 rounded-xl bg-[#E7EFEE] text-center text-2xl">
+                  <button onClick={() => addTable()}>
+                    <BsCalendar2Plus />
+                  </button>
                 </td>
                 <td className="text-center">
                   <input
@@ -191,11 +192,6 @@ export const Company = () => {
                 </td>
               </tr>
               {/* ---------------- */}
-              <tr>
-                <td className=" w-20 h-12 rounded-xl bg-[#E7EFEE] text-center text-2xl">
-                  <button onClick={() => addTable()}>+</button>
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>
