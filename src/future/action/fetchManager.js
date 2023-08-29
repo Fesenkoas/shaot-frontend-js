@@ -64,7 +64,7 @@ export const deleteEmployeeCompany = (id, employee) => (dispatch) => {
 // Put Configurate Schedule
 export const putConfigurateSchedule = (id, newData) => (dispatch) =>{
   dispatch(loading(false));
-  fetch(`${baseURL}/company/${id}/configure`, {
+  fetch(`${baseURL}/company/${id}/schedule/configure`, {
     method: "PUT",
     headers: {
       'Content-Type': 'application/json',
@@ -72,7 +72,7 @@ export const putConfigurateSchedule = (id, newData) => (dispatch) =>{
     body: JSON.stringify(newData),
   })
   .then(response => response.json())
-  // .then(data => {console.log(data);dispatch(getMessage(data.message))})
+  // .then(data => {dispatch(getMessage(data.message))})
 };
 
 //Get Week Configurate

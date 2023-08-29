@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { FaTrashCan } from "react-icons/fa6";
-import { getWeekConfigurate, putConfigurateSchedule } from "../../future/action/fetchManager";
+import {
+  getWeekConfigurate,
+  putConfigurateSchedule,
+} from "../../future/action/fetchManager";
 import { useDispatch, useSelector } from "react-redux";
 import { weekConfigurate } from "../../future/redux/managerSlice";
 import { dayWeek } from "../../unit/variables";
 
-const Company = () => {
+export const Company = () => {
   const dispatch = useDispatch();
   const { configurate, loading, checkDay } = useSelector(
     (state) => state.manager
@@ -27,6 +30,9 @@ const Company = () => {
       workersNumberPerShift: workersNumber,
     };
     const newArr = [...configurate.shiftsTime, newItem];
+    console.log(newArr);
+    newArr.sort((a, b) => a.start.localeCompare(b.start));
+    console.log(newArr);
     clear();
     setCount(count + 1);
     dispatch(weekConfigurate({ ...configurate, shiftsTime: newArr }));
@@ -48,15 +54,16 @@ const Company = () => {
     dispatch(weekConfigurate({ ...configurate, workDays: updatedWorkDays }));
   };
   const handleSave = () => {
+    console.log(configurate.shiftsTime, checkDay);
     const newData = {
-      weekStart: "2023-09-03",
-      weekEnd: "2023-09-08",
+      weekStart: "2023-08-27",
+      weekEnd: "2023-09-02",
       shiftsTime: configurate.shiftsTime,
-      workDays:checkDay,
-      // alarmPoint: "2023-09-07"
+      workDays: checkDay,
+      alarmPoint: "2023-09-07",
     };
-    console.log(newData);
-    dispatch(putConfigurateSchedule(1700,newData))
+    dispatch(putConfigurateSchedule(1700, newData));
+    dispatch(weekConfigurate({ ...configurate, newData }));
   };
   useEffect(() => {
     dispatch(getWeekConfigurate("1700"));
@@ -64,7 +71,7 @@ const Company = () => {
   return (
     <>
       <div className="flex flex-row justify-center">
-        <div className=" p-4 m-1 overflow-y-auto h-2/6">
+        <div className=" p-4 m-1 overflow-y-auto h-[500px]">
           <table className="border-separate border-spacing-x-7 border-spacing-y-8 ">
             <thead>
               <tr>
@@ -218,16 +225,16 @@ const Company = () => {
         </div>
       </div>
       <div className="flex flex-row p-4 m-1 justify-center text-white text-center text-2xl">
-        <button className="w-40 h-12 rounded-xl  m-1   bg-[#99C2BD]" onClick={handleSave}>
+        <button
+          className="w-40 h-12 rounded-xl  m-1   bg-[#99C2BD] hover:bg-[#0A3D45]"
+          onClick={handleSave}
+        >
           Save
         </button>
-        <button className="w-40 h-12 rounded-xl  m-1  bg-[#0A3745]">
+        <button className="w-40 h-12 rounded-xl  m-1 bg-[#99C2BD] hover:bg-[#0A3745]">
           Clear
         </button>
       </div>
     </>
   );
 };
-
-
-export default Company;
