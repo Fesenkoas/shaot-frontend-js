@@ -17,7 +17,7 @@ export const Boxs = () => {
           {shift.map((shift, index) => (
             <Box
               day={shift.day}
-              key={index}
+              key={shift.day}
               onBoxClick={() => handleBoxClick(index)}
               isActive={activeBox === index}
             />

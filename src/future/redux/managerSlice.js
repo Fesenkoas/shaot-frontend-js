@@ -4,6 +4,9 @@ const initialState = {
   loading: false,
   company: [],
   schedule:[],
+  configurate:{},
+  checkDay:[]
+
 };
 
 const managerSlice = createSlice({
@@ -25,9 +28,14 @@ const managerSlice = createSlice({
     loading(state, action) {
       state.loading = action.payload;
     },
+    weekConfigurate(state, action){
+      state.configurate = action.payload;
+      state.checkDay = action.payload.workDays;
+      state.loading = true;
+    },
   },
 });
 export const reduxManager = (state) => state.manager;
 export default managerSlice.reducer;
-export const { getCompanyById, getScheduleCompany,сompanySchedule, loading } =
+export const { getCompanyById, getScheduleCompany,сompanySchedule, loading, weekConfigurate } =
   managerSlice.actions;

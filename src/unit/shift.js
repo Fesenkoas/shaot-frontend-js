@@ -131,7 +131,7 @@ export const settingTable = [
         workersNumberPerShift: 3,
       },
     ],
-    workDays: ["monday"],
+    workDays: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
     pointAlarm: "thursday",
   },
 ];

@@ -1,4 +1,4 @@
-import { loading, getCompanyById, сompanySchedule } from "../redux/managerSlice";
+import { loading, getCompanyById, сompanySchedule, weekConfigurate } from "../redux/managerSlice";
 import { getMessage } from "../redux/messageSlice";
 
 const baseURL = "https://shaotcloud.fly.dev/shaot";
@@ -59,4 +59,26 @@ export const getCompanySchedule = (id) => (dispatch) => {
 export const deleteEmployeeCompany = (id, employee) => (dispatch) => {
   fetch(`${baseURL}/company/${id}/worker/${employee}`, { method: "DELETE"})
   .then((response) => response.data);
+};
+
+// Put Configurate Schedule
+export const putConfigurateSchedule = (id, newData) => (dispatch) =>{
+  dispatch(loading(false));
+  fetch(`${baseURL}/company/${id}/configure`, {
+    method: "PUT",
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newData),
+  })
+  .then(response => response.json())
+  // .then(data => {console.log(data);dispatch(getMessage(data.message))})
+};
+
+//Get Week Configurate
+export const getWeekConfigurate = (id) => (dispatch) => {
+  dispatch(loading(false));
+  fetch(`${baseURL}/company/${id}/configuration`, { method: "GET"})
+    .then((res) => res.json())
+    .then((data) => dispatch(weekConfigurate(data)));
 };

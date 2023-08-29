@@ -30,7 +30,7 @@ export const Box = ({ isActive, onBoxClick, day }) => {
             <div className="flex flex-col w-full pl-4">
               {day[index].workerNames.map((name) => (
                 <div className="flex flex-row mt-2 ">
-                  {isActive ? name: name[0]}
+                  {isActive ? name: name[0]+name[1]}
                   
                   </div>
               ))}
