@@ -31,7 +31,7 @@ export const Company = () => {
     };
     const newArr = [...configurate.shiftsTime, newItem];
     console.log(newArr);
-    newArr.sort((a, b) => a.start.localeCompare(b.start));
+    newArr.sort((a, b) => parseInt(a.start)-parseInt(b.start));
     console.log(newArr);
     clear();
     setCount(count + 1);
