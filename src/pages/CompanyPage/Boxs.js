@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Box } from "./Box";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
+// import { useSelector } from "react-redux";
 import { getCompanySchedule } from "../../future/action/fetchManager";
 import { shift } from "../../unit/shift";
 import { refresh, seting } from "../../unit/icons";
