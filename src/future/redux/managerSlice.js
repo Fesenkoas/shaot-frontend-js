@@ -3,10 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   company: [],
-  schedule:[],
-  configurate:{},
-  checkDay:[]
-
+  schedule: [],
+  configurate: {},
+  checkDay: [],
 };
 
 const managerSlice = createSlice({
@@ -17,18 +16,14 @@ const managerSlice = createSlice({
       state.company = action.payload;
       state.loading = true;
     },
-    getScheduleCompany(state, action) {
-      state.company = action.payload;
-      state.loading = true;
-    },
-    сompanySchedule(state, action){
+    сompanySchedule(state, action) {
       state.schedule = action.payload;
       state.loading = true;
     },
     loading(state, action) {
       state.loading = action.payload;
     },
-    weekConfigurate(state, action){
+    weekConfigurate(state, action) {
       state.configurate = action.payload;
       state.checkDay = action.payload.workDays;
       state.loading = true;
@@ -37,5 +32,5 @@ const managerSlice = createSlice({
 });
 export const reduxManager = (state) => state.manager;
 export default managerSlice.reducer;
-export const { getCompanyById, getScheduleCompany,сompanySchedule, loading, weekConfigurate } =
+export const { getCompanyById, сompanySchedule, loading, weekConfigurate } =
   managerSlice.actions;

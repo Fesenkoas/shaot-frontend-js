@@ -62,11 +62,11 @@ export const Company = () => {
       workDays: checkDay,
       alarmPoint: "2023-09-07",
     };
-    dispatch(putConfigurateSchedule(1700, newData));
+    dispatch(putConfigurateSchedule(1800, newData));
     dispatch(weekConfigurate({ ...configurate, newData }));
   };
   useEffect(() => {
-    dispatch(getWeekConfigurate("1700"));
+    dispatch(getWeekConfigurate("1800"));
   }, [dispatch]);
   return (
     <>
