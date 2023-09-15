@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export const Boxs = () => {
   const dispatch = useDispatch();
   const [activeBox, setActiveBox] = useState(0);
-  const { schedule, loading } = useSelector((state) => state.manager);
+  //const { schedule, loading } = useSelector((state) => state.manager);
   const handleBoxClick = (boxIndex) => {
     setActiveBox(boxIndex);
   };
