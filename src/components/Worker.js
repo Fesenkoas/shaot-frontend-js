@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useDispatch } from "react-redux";
 import { putEmployeeCompany } from "../future/action/fetchManager";
+import style from "../css_module/workers.module.css";
 
 export const Worker = ({ loading, company }) => {
   const dispatch = useDispatch();
@@ -12,14 +13,14 @@ export const Worker = ({ loading, company }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleInvitation = () => {
-   dispatch(putEmployeeCompany(1700,employee.id))
+    dispatch(putEmployeeCompany(1700, employee.id));
   };
 
   const handleClickSearch = () => {
-    if(search){
-    const matchedWorkers = company.filter((worker) => worker.name === search);
-    setEmployee(matchedWorkers[0]);
-    setSearch("");
+    if (search) {
+      const matchedWorkers = company.filter((worker) => worker.name === search);
+      setEmployee(matchedWorkers[0]);
+      setSearch("");
     }
   };
 
@@ -30,9 +31,34 @@ export const Worker = ({ loading, company }) => {
     setWage(item.wage);
   };
   return (
-    <div className="flex flex-row justify-center">
-      <div className="basis-1/2 w-[70%] bg-[#E7EFEE] m-3 rounded-xl">
-        <div className="flex flex-row ">
+    <div className={style.conteiner}>
+      {/* Left */}
+      <div className="m-3 rounded-xl">
+        <div className="flex-col w-[430px] h-[547px]">
+          {/* <div className="row-span-2 pl-10 pt-5  w-[50%]">
+            <p className="text-[#99C2BD] text-lg ">Employee Information</p>
+            <p className="text-[#99C2BD] text-3xl font-bold pt-8 ">
+              {employee.name}
+            </p>
+            <p className="text-[#99C2BD] text-base pt-3">{employee.id}</p>
+            <p className="text-[#99C2BD] text-lg pt-10">Contact:</p>
+            <p className="text-black text-xl pt-2">053 924 0009</p>
+            <p className="text-black text-xl pt-1">designerfesenko@gmail.com</p>
+            <p className="text-black text-lg font-bold pt-10">
+              Wage per hour:
+              <input
+                type="text"
+                className="border border-black w-14 h-10 text-center text-xl"
+                onChange={(e) => setWage(e.target.value)}
+                value={wage}
+              />
+            </p>
+          </div> */}
+        </div>
+      </div>
+      {/* Center */}
+      <div className="bg-[#E7EFEE] m-3 rounded-xl">
+        <div className={style.center}>
           <div className="row-span-2 pl-10 pt-5  w-[50%]">
             <p className="text-[#99C2BD] text-lg ">Employee Information</p>
             <p className="text-[#99C2BD] text-3xl font-bold pt-8 ">
@@ -52,10 +78,9 @@ export const Worker = ({ loading, company }) => {
               />
             </p>
           </div>
-          <div className="row-span-2">03</div>
         </div>
       </div>
-
+      {/* Right */}
       <div className="flex-col m-3 ">
         {/* <button className="w-[380px] h-[80px] bg-[#99C2BD] mb-5 rounded-xl text-3xl font-bold text-white">
           Send an invitation
@@ -63,19 +88,19 @@ export const Worker = ({ loading, company }) => {
         {isVisible ? (
           <button
             onClick={handleInvitation}
-            className="w-[380px] h-[80px] bg-[#99C2BD] mb-5 rounded-xl text-3xl font-bold text-white"
+            className="w-[430px] h-[100px] bg-[#99C2BD] mb-5 rounded-xl text-3xl font-bold text-white hover:bg-[#0D1634]"
           >
             Send an invitation
           </button>
         ) : (
           <button
             disabled
-            className="w-[380px] h-[80px] bg-[#99c2bd93] mb-5 rounded-xl text-3xl font-bold text-white"
+            className="w-[430px] h-24 bg-[#99c2bd93] mb-5 rounded-xl text-3xl font-bold text-white"
           >
             Send an invitation
           </button>
         )}
-        <div className="basis-1/4 w-[380px] h-[572px] bg-[#E7EFEE] rounded-xl">
+        <div className=" w-[430px] h-[438px] bg-[#E7EFEE] rounded-xl">
           <div className="p-11 ">
             <Paper
               component="form"
