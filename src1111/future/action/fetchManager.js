@@ -1,10 +1,8 @@
-
 import {
   loading,
   getCompanyById,
   сompanySchedule,
   weekConfigurate,
-  weekNames,
 } from "../redux/managerSlice";
 import { getMessage } from "../redux/messageSlice";
 
@@ -108,60 +106,6 @@ export const getWeekConfigurate = (id) => (dispatch) => {
   fetch(`${baseURL}/company/${id}/configuration`, { method: "GET" })
     .then((res) => res.json())
     .then((data) => dispatch(weekConfigurate(data)))
-    .catch((error) => {
-      console.log(error);
-    })
-};
-//Get Week Names
-export const fetchWeekNames = (id) => (dispatch) => {
-  dispatch(loading(false));
-  fetch(`${baseURL}/company/${id}/week/names`, { method: "GET" })
-    .then((res) => res.json())
-    .then((data) => dispatch(weekNames(data)))
-    .catch((error) => {
-      console.log(error);
-    })
-};
-
-//Post Week Names
-
-export const fetchPutWeekNames = (id, newData) => (dispatch) => {
-  console.log(id, newData);
-  dispatch(loading(false));
-  fetch(`${baseURL}/company/${id}/week/period`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newData),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-       dispatch(сompanySchedule(data))
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-};
-
-//Post Week Names
-// https://shaotcloud.fly.dev/shaot/company/1800/schedule/save
-export const fetchPostSaveSchedule = (id, newData) => (dispatch) => {
-  console.log(id, newData);
-  dispatch(loading(false));
-  fetch(`${baseURL}/company/${id}/schedule/update`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newData),
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      //dispatch(сompanySchedule(data))
-    })
     .catch((error) => {
       console.log(error);
     })

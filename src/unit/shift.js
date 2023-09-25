@@ -1,172 +1,154 @@
- export const shift = [
+export const shift = [
   {
-      "dayDate": "2023-08-26",
-      "dayName": "SUNDAY",
-      "shifts": [
-          {
-              "shiftName": "2023-08-27T04:00:00",
-              "shiftStart": "04:00:00",
-              "shiftEnd": "12:00:00",
-              "workerNames": [
-                  "Stas"
-              ]
-          },
-          {
-              "shiftName": "2023-08-27T12:00:00",
-              "shiftStart": "12:00:00",
-              "shiftEnd": "20:00:00",
-              "workerNames": []
-          },
-          {
-              "shiftName": "2023-08-27T20:00:00",
-              "shiftStart": "20:00:00",
-              "shiftEnd": "04:00:00",
-              "workerNames": [
-                  "Stas"
-              ]
-          }
-      ]
+    dayDate: "2023-08-26",
+    dayName: "SUNDAY",
+    shifts: [
+      {
+        shiftName: "2023-08-27T04:00:00",
+        shiftStart: "04:00:00",
+        shiftEnd: "12:00:00",
+        workerNames: ["Alex", "Stas","Oden"],
+      },
+      {
+        shiftName: "2023-08-27T12:00:00",
+        shiftStart: "12:00:00",
+        shiftEnd: "20:00:00",
+        workerNames: [],
+      },
+      {
+        shiftName: "2023-08-27T20:00:00",
+        shiftStart: "20:00:00",
+        shiftEnd: "04:00:00",
+        workerNames: ["Alex", "Stas"],
+      },
+    ],
   },
   {
-      "dayDate": "2023-08-27",
-      "dayName": "MONDAY",
-      "shifts": [
-          {
-              "shiftName": "2023-08-28T04:00:00",
-              "shiftStart": "04:00:00",
-              "shiftEnd": "12:00:00",
-              "workerNames": []
-          },
-          {
-              "shiftName": "2023-08-28T12:00:00",
-              "shiftStart": "12:00:00",
-              "shiftEnd": "20:00:00",
-              "workerNames": [
-                  "Stas"
-              ]
-          },
-          {
-              "shiftName": "2023-08-28T20:00:00",
-              "shiftStart": "20:00:00",
-              "shiftEnd": "04:00:00",
-              "workerNames": []
-          }
-      ]
+    dayDate: "2023-08-27",
+    dayName: "MONDAY",
+    shifts: [
+      {
+        shiftName: "2023-08-28T04:00:00",
+        shiftStart: "04:00:00",
+        shiftEnd: "12:00:00",
+        workerNames: [],
+      },
+      {
+        shiftName: "2023-08-28T12:00:00",
+        shiftStart: "12:00:00",
+        shiftEnd: "20:00:00",
+        workerNames: ["Stas"],
+      },
+      {
+        shiftName: "2023-08-28T20:00:00",
+        shiftStart: "20:00:00",
+        shiftEnd: "04:00:00",
+        workerNames: [],
+      },
+    ],
   },
   {
-      "dayDate": "2023-08-28",
-      "dayName": "TUESDAY",
-      "shifts": [
-          {
-              "shiftName": "2023-08-29T04:00:00",
-              "shiftStart": "04:00:00",
-              "shiftEnd": "12:00:00",
-              "workerNames": [
-                  "Stas"
-              ]
-          },
-          {
-              "shiftName": "2023-08-29T12:00:00",
-              "shiftStart": "12:00:00",
-              "shiftEnd": "20:00:00",
-              "workerNames": []
-          },
-          {
-              "shiftName": "2023-08-29T20:00:00",
-              "shiftStart": "20:00:00",
-              "shiftEnd": "04:00:00",
-              "workerNames": [
-                  "Stas"
-              ]
-          }
-      ]
+    dayDate: "2023-08-28",
+    dayName: "TUESDAY",
+    shifts: [
+      {
+        shiftName: "2023-08-29T04:00:00",
+        shiftStart: "04:00:00",
+        shiftEnd: "12:00:00",
+        workerNames: ["Stas"],
+      },
+      {
+        shiftName: "2023-08-29T12:00:00",
+        shiftStart: "12:00:00",
+        shiftEnd: "20:00:00",
+        workerNames: [],
+      },
+      {
+        shiftName: "2023-08-29T20:00:00",
+        shiftStart: "20:00:00",
+        shiftEnd: "04:00:00",
+        workerNames: ["Stas"],
+      },
+    ],
   },
   {
-      "dayDate": "2023-08-29",
-      "dayName": "WEDNESDAY",
-      "shifts": [
-          {
-              "shiftName": "2023-08-30T04:00:00",
-              "shiftStart": "04:00:00",
-              "shiftEnd": "12:00:00",
-              "workerNames": []
-          },
-          {
-              "shiftName": "2023-08-30T12:00:00",
-              "shiftStart": "12:00:00",
-              "shiftEnd": "20:00:00",
-              "workerNames": [
-                  "Stas"
-              ]
-          },
-          {
-              "shiftName": "2023-08-30T20:00:00",
-              "shiftStart": "20:00:00",
-              "shiftEnd": "04:00:00",
-              "workerNames": []
-          }
-      ]
+    dayDate: "2023-08-29",
+    dayName: "WEDNESDAY",
+    shifts: [
+      {
+        shiftName: "2023-08-30T04:00:00",
+        shiftStart: "04:00:00",
+        shiftEnd: "12:00:00",
+        workerNames: [],
+      },
+      {
+        shiftName: "2023-08-30T12:00:00",
+        shiftStart: "12:00:00",
+        shiftEnd: "20:00:00",
+        workerNames: ["Stas"],
+      },
+      {
+        shiftName: "2023-08-30T20:00:00",
+        shiftStart: "20:00:00",
+        shiftEnd: "04:00:00",
+        workerNames: [],
+      },
+    ],
   },
   {
-      "dayDate": "2023-08-30",
-      "dayName": "THURSDAY",
-      "shifts": [
-          {
-              "shiftName": "2023-08-31T04:00:00",
-              "shiftStart": "04:00:00",
-              "shiftEnd": "12:00:00",
-              "workerNames": [
-                  "Stas"
-              ]
-          },
-          {
-              "shiftName": "2023-08-31T12:00:00",
-              "shiftStart": "12:00:00",
-              "shiftEnd": "20:00:00",
-              "workerNames": []
-          },
-          {
-              "shiftName": "2023-08-31T20:00:00",
-              "shiftStart": "20:00:00",
-              "shiftEnd": "04:00:00",
-              "workerNames": [
-                  "Stas"
-              ]
-          }
-      ]
+    dayDate: "2023-08-30",
+    dayName: "THURSDAY",
+    shifts: [
+      {
+        shiftName: "2023-08-31T04:00:00",
+        shiftStart: "04:00:00",
+        shiftEnd: "12:00:00",
+        workerNames: ["Alex", "Stas"],
+      },
+      {
+        shiftName: "2023-08-31T12:00:00",
+        shiftStart: "12:00:00",
+        shiftEnd: "20:00:00",
+        workerNames: [],
+      },
+      {
+        shiftName: "2023-08-31T20:00:00",
+        shiftStart: "20:00:00",
+        shiftEnd: "04:00:00",
+        workerNames: ["Stas"],
+      },
+    ],
   },
   {
-      "dayDate": "2023-08-31",
-      "dayName": "FRIDAY",
-      "shifts": [
-          {
-              "shiftName": "2023-09-01T04:00:00",
-              "shiftStart": "04:00:00",
-              "shiftEnd": "12:00:00",
-              "workerNames": []
-          },
-          {
-              "shiftName": "2023-09-01T12:00:00",
-              "shiftStart": "12:00:00",
-              "shiftEnd": "20:00:00",
-              "workerNames": [
-                  "Stas"
-              ]
-          },
-          {
-              "shiftName": "2023-09-01T20:00:00",
-              "shiftStart": "20:00:00",
-              "shiftEnd": "04:00:00",
-              "workerNames": []
-          }
-      ]
+    dayDate: "2023-08-31",
+    dayName: "FRIDAY",
+    shifts: [
+      {
+        shiftName: "2023-09-01T04:00:00",
+        shiftStart: "04:00:00",
+        shiftEnd: "12:00:00",
+        workerNames: [],
+      },
+      {
+        shiftName: "2023-09-01T12:00:00",
+        shiftStart: "12:00:00",
+        shiftEnd: "20:00:00",
+        workerNames: ["Stas"],
+      },
+      {
+        shiftName: "2023-09-01T20:00:00",
+        shiftStart: "20:00:00",
+        shiftEnd: "04:00:00",
+        workerNames: [],
+      },
+    ],
   },
   {
-      "dayDate": "2023-09-01",
-      "dayName": "SATURDAY",
-      "shifts": []
-  }
-]
+    dayDate: "2023-09-01",
+    dayName: "SATURDAY",
+    shifts: [],
+  },
+];
 //  [
 //   {
 //     day: [
@@ -300,7 +282,14 @@ export const settingTable = [
         workersNumberPerShift: 3,
       },
     ],
-    workDays: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+    workDays: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ],
     pointAlarm: "thursday",
   },
 ];

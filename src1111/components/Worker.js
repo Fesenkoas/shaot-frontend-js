@@ -59,7 +59,7 @@ export const Worker = ({ loading, company }) => {
       {/* Center */}
       <div className="bg-[#E7EFEE] m-3 rounded-xl">
         <div className={style.center}>
-          <div className={`p-5`}>
+          <div className="row-span-2 pl-10 pt-5  w-[50%]">
             <p className="text-[#99C2BD] text-lg ">Employee Information</p>
             <p className="text-[#99C2BD] text-3xl font-bold pt-8 ">
               {employee.name}
@@ -142,7 +142,3 @@ export const Worker = ({ loading, company }) => {
     </div>
   );
 };
-
-
-
-// ${"rtl" === "rtl" ? style.text_rtl : style.text_ltr}

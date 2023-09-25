@@ -26,13 +26,13 @@ export const Header = () => {
           </Link>
         </div>
         <div >
-          <Link to={"/company/"} >
+          <Link to={"/company/new"} >
           {calendar}
           </Link>
         </div>
         
         <div className="text-2xl">
-          <Link to={"/company/info"} >
+          <Link to={"/company/workers"} >
           {home}
           </Link>
         </div>
