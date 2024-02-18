@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPutWeekNames, fetchWeekNames } from "../future/action/fetchManager";
+import { ID } from "../unit/const";
 
 
 export const WeekNames = () => {
@@ -12,10 +13,10 @@ export const WeekNames = () => {
       period
     }
 
-    dispatch(fetchPutWeekNames(1800, data))
+    dispatch(fetchPutWeekNames(ID, data))
   };
   useEffect(() => {
-    dispatch(fetchWeekNames(1800));
+    dispatch(fetchWeekNames(ID));
   }, [dispatch]);
   return (
     <div className="flex flex-row">

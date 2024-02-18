@@ -1,21 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    loading: false,
-  };
+  loading: false,
+
+  employeeShift: [],
+  configurate: null,
+  checkDay: [],
+  weekNames: [],
+};
 
 const employeeSlice = createSlice({
-    name: "employee",
-    initialState,
-    reducers: {
-    //   getUsers(state, action) {
-    //     console.log(action.payload.items);
-    //     state.users = action.payload.items;
-    //     state.totalCount = action.payload.totalCount;
-    //   },
-     
+  name: "employee",
+  initialState,
+  reducers: {
+    getSchedule(state, action) {
+      state.loading = false;
+      state.employeeShift = action.payload;
+      state.loading = true;
     },
-  });
-  
-  export default employeeSlice.reducer;
-  export const { getUsers } = employeeSlice.actions;
+    loading(state, action) {
+      state.loading = action.payload;
+    },
+  },
+});
+
+export default employeeSlice.reducer;
+export const { loading, getSchedule } = employeeSlice.actions;

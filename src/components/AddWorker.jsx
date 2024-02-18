@@ -4,58 +4,50 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllWorkersFetch } from "../future/action/fetchAdmin";
 import style from "../css_module/workers.module.css";
-import { сompanySchedule } from "../future/redux/managerSlice";
 
-export const AddWorker = ({ day, indexKey, index, handleAddWorker }) => {
+export const AddWorker = ({ handleShowModal, handleAddWorker }) => {
   const { workers, loading } = useSelector((state) => state.admin);
-  const { schedule } = useSelector((state) => state.manager);
-  const [search, setSearch] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [search, setSearch] = useState(null);
   const dispatch = useDispatch();
-console.log(indexKey, index);
+
   const handleClickSearch = () => {
     if (search) {
       const matchedWorkers = workers.filter((worker) => worker.name === search);
       console.log(matchedWorkers[0].name);
-        handlItem(matchedWorkers[0].name)
-      setSearch("");
+      handleAddWorker(matchedWorkers[0].name);
+      setSearch(null);
+    }
+  };
+  const handleKeyPress = (event) => {
+    if (event.key === 'Escape' && isModalOpen) {
+      handleShowModal(null)
+      setIsModalOpen(false);
     }
   };
 
-  const handlItem = (name) => {
-    const updatedWorkerNames = [...day.shifts[index].workerNames, name];
-
-    const updatedShift = {
-      ...day.shifts[index],
-      workerNames: updatedWorkerNames,
-    };
-
-    const updatedDay = {
-      ...day,
-      shifts: [
-        ...day.shifts.slice(0, index),
-        updatedShift,
-        ...day.shifts.slice(index + 1),
-      ],
-    };
-    const updateAll = [
-      ...schedule.slice(0, indexKey),
-      updatedDay,
-      ...schedule.slice(indexKey + 1),
-    ];
-
-    dispatch(сompanySchedule(updateAll));
-    handleAddWorker(null);
-  };
-
+  document.addEventListener('keydown', handleKeyPress);
+ 
   useEffect(() => {
+    setIsModalOpen(true)
     dispatch(getAllWorkersFetch());
-  }, [dispatch]);
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+    
+  }, [dispatch, isModalOpen]);
+
 
   return (
     <div className={style.fullItem}>
-      
-      <div>
-      <div className={style.add_to_card} onClick={()=>handleAddWorker(null)}>X</div>
+     
+        <div>
+        <div
+          className={style.add_to_card}
+          onClick={() => handleShowModal(null)}
+        >
+          X
+        </div>
         <div className="p-11 ">
           <Paper
             component="form"
@@ -86,13 +78,13 @@ console.log(indexKey, index);
         <div className="px-11 h-[295px]">
           {loading
             ? workers.map((worker) => (
-                <p key={worker.id} onClick={() => handlItem(worker.name)}>
+                <p key={worker.id} onClick={() => handleAddWorker(worker.name)}>
                   {worker.name}
                 </p>
               ))
             : "Loading....."}
         </div>
-      </div>
+        </div>
     </div>
   );
 };

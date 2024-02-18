@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
 import { getMessage } from "../../future/redux/messageSlice";
 import { getAllWorkersFetch } from "../../future/action/fetchAdmin";
+import { Loading } from "../../components/Loading";
 
 export const Info = () => {
   const { workers, loading } = useSelector((state) => state.admin);
@@ -20,6 +21,7 @@ export const Info = () => {
   }, [dispatch]);
   return (
     <>
+    {!loading && <Loading />}
       <Worker company={workers} loading={loading} />
     </>
   );

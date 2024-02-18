@@ -7,7 +7,7 @@ export const shift = [
         shiftName: "2023-08-27T04:00:00",
         shiftStart: "04:00:00",
         shiftEnd: "12:00:00",
-        workerNames: ["Alex", "Stas","Oden"],
+        workerNames: ["Alex", "Stas", "Oden"],
       },
       {
         shiftName: "2023-08-27T12:00:00",
@@ -149,117 +149,6 @@ export const shift = [
     shifts: [],
   },
 ];
-//  [
-//   {
-//     day: [
-//       {
-//         shiftName: "2023-08-28T07:00:00",
-//         dayDate: "2023-08-28",
-//         dayName: "SUNDAY",
-//         shiftStart: "07:00:00",
-//         shiftEnds: "15:00:00",
-//         workerNames: ["Vitaly"],
-//       },
-//       {
-//         shiftName: "2023-08-28T15:00:00",
-//         dayDate: "2023-08-28",
-//         shiftStart: "15:00:00",
-//         shiftEnds: "23:00:00",
-//         workerNames: ["Oleg"],
-//       },
-//     ],
-//   },
-//   {
-//     day: [
-//       {
-//         shiftName: "2023-08-29T07:00:00",
-//         dayDate: "2023-08-29",
-//         shiftStart: "07:00:00",
-//         shiftEnds: "15:00:00",
-//         workerNames: ["Vitaly"],
-//       },
-//       {
-//         shiftName: "2023-08-29T15:00:00",
-//         dayDate: "2023-08-29",
-//         shiftStart: "15:00:00",
-//         shiftEnds: "23:00:00",
-//         workerNames: [],
-//       },
-//     ],
-//   },
-//   {
-//     day: [
-//       {
-//         shiftName: "2023-08-30T07:00:00",
-//         dayDate: "2023-08-30",
-//         shiftStart: "07:00:00",
-//         shiftEnds: "15:00:00",
-//         workerNames: ["Vitaly"],
-//       },
-//       {
-//         shiftName: "2023-08-30T15:00:00",
-//         dayDate: "2023-08-30",
-//         shiftStart: "15:00:00",
-//         shiftEnds: "23:00:00",
-//         workerNames: [],
-//       },
-//     ],
-//   },
-//   {
-//     day: [
-//       {
-//         shiftName: "2023-08-31T07:00:00",
-//         dayDate: "2023-08-31",
-//         shiftStart: "07:00:00",
-//         shiftEnds: "15:00:00",
-//         workerNames: ["Vitaly"],
-//       },
-//       {
-//         shiftName: "2023-08-31T15:00:00",
-//         dayDate: "2023-08-31",
-//         shiftStart: "15:00:00",
-//         shiftEnds: "23:00:00",
-//         workerNames: ["Oleg", "Alex"],
-//       },
-//     ],
-//   },
-//   {
-//     day: [
-//       {
-//         shiftName: "2023-09-01T07:00:00",
-//         dayDate: "2023-09-01",
-//         shiftStart: "07:00:00",
-//         shiftEnds: "15:00:00",
-//         workerNames: ["Vitaly", "Alex"],
-//       },
-//       {
-//         shiftName: "2023-09-01T15:00:00",
-//         dayDate: "2023-09-01",
-//         shiftStart: "15:00:00",
-//         shiftEnds: "23:00:00",
-//         workerNames: [],
-//       },
-//     ],
-//   },
-//   {
-//     day: [
-//       {
-//         shiftName: "2023-09-02T07:00:00",
-//         dayDate: "2023-09-02",
-//         shiftStart: "07:00:00",
-//         shiftEnds: "15:00:00",
-//         workerNames: ["Vitaly"],
-//       },
-//       {
-//         shiftName: "2023-09-02T15:00:00",
-//         dayDate: "2023-09-02",
-//         shiftStart: "15:00:00",
-//         shiftEnds: "23:00:00",
-//         workerNames: ["Oleg", "Alex"],
-//       },
-//     ],
-//   },
-// ];
 
 export const settingTable = [
   {
@@ -293,3 +182,141 @@ export const settingTable = [
     pointAlarm: "thursday",
   },
 ];
+
+export const employeeShift = [
+  {
+    dayDate: "2023-08-27",
+    dayName: "SUNDAY",
+    shifts: [
+      { shiftTime: "07:00:00", change: 1 },
+      { shiftTime: "15:00:00", change: 1 },
+      { shiftTime: "23:00:00", change: 1 },
+    ],
+  },
+  {
+    dayDate: "2023-08-28",
+    dayName: "MONDAY",
+    shifts: [
+      { shiftTime: "07:00:00", change: 1 },
+      { shiftTime: "15:00:00", change: 1 },
+      { shiftTime: "23:00:00", change: 1 },
+    ],
+  },
+  {
+    dayDate: "2023-08-29",
+    dayName: "TUESDAY",
+    shifts: [
+      { shiftTime: "07:00:00", change: 1 },
+      { shiftTime: "15:00:00", change: 1 },
+      { shiftTime: "23:00:00", change: 1 },
+    ],
+  },
+  {
+    dayDate: "2023-08-30",
+    dayName: "WEDNESDAY",
+    shifts: [
+      { shiftTime: "07:00:00", change: 1 },
+      { shiftTime: "15:00:00", change: 1 },
+      { shiftTime: "23:00:00", change: 1 },
+    ],
+  },
+  {
+    dayDate: "2023-08-31",
+    dayName: "THURSDAY",
+    shifts: [
+      { shiftTime: "07:00:00", change: 1 },
+      { shiftTime: "15:00:00", change: 1 },
+      { shiftTime: "23:00:00", change: 1 },
+    ],
+  },
+  {
+    dayDate: "2023-09-01",
+    dayName: "FRIDAY",
+    shifts: [
+      { shiftTime: "07:00:00", change: 1 },
+      { shiftTime: "15:00:00", change: 1 },
+      { shiftTime: "23:00:00", change: 1 },
+    ],
+  },
+  {
+    dayDate: "2023-09-02",
+    dayName: "SATURDAY",
+    shifts: [
+      { shiftTime: "07:00:00", change: 1 },
+      { shiftTime: "15:00:00", change: 1 },
+      { shiftTime: "23:00:00", change: 1 },
+    ],
+  },
+];
+
+export const shift_v_2 = [
+  {
+    dayDate: "2023-09-02",
+    dayName: "SUNDAY",
+    shifts: [
+      { shiftStart: "05:00:00", shiftEnd: "13:00:00", workerNeeded: 3 },
+      { shiftStart: "13:00:00", shiftEnd: "21:00:00", workerNeeded: 3 },
+      { shiftStart: "21:00:00", shiftEnd: "05:00:00", workerNeeded: 3},
+    ],
+  },
+  {
+    dayDate: "2023-09-02",
+    dayName: "MONDAY",
+    shifts: [
+      { shiftStart: "05:00:00", shiftTime: "13:00:00", workerNeeded: 3 },
+      // { shiftStart: "13:00:00", shiftEnd: "21:00:00", workerNeeded: 3 },
+      { shiftStart: "21:00:00", shiftEnd: "05:00:00", workerNeeded: 3},
+    ],
+  },
+  {
+    dayDate: "2023-09-02",
+    dayName: "TUENSDAY",
+    shifts: [
+      { shiftStart: "05:00:00", shiftTime: "13:00:00", workerNeeded: 3 },
+      { shiftStart: "13:00:00", shiftEnd: "21:00:00", workerNeeded: 3 },
+      { shiftStart: "21:00:00", shiftEnd: "05:00:00", workerNeeded: 3},
+    ],
+  },
+  {
+    dayDate: "2023-09-02",
+    dayName: "WEDNESDAY",
+    shifts: [
+      { shiftStart: "05:00:00", shiftTime: "13:00:00", workerNeeded: 3 },
+      { shiftStart: "13:00:00", shiftEnd: "21:00:00", workerNeeded: 3 },
+      { shiftStart: "21:00:00", shiftEnd: "05:00:00", workerNeeded: 3},
+    ],
+  },
+  {
+    dayDate: "2023-09-02",
+    dayName: "THURSDAY",
+    shifts: [
+      { shiftStart: "05:00:00", shiftTime: "13:00:00", workerNeeded: 3 },
+      { shiftStart: "13:00:00", shiftEnd: "21:00:00", workerNeeded: 3 },
+      { shiftStart: "21:00:00", shiftEnd: "05:00:00", workerNeeded: 3},
+    ],
+  },
+  {
+    dayDate: "2023-09-02",
+    dayName: "FRIDAY",
+    shifts: [
+      { shiftStart: "05:00:00", shiftTime: "13:00:00", workerNeeded: 3 },
+      { shiftStart: "13:00:00", shiftEnd: "21:00:00", workerNeeded: 3 },
+      { shiftStart: "21:00:00", shiftEnd: "05:00:00", workerNeeded: 3},
+    ],
+  },
+  {
+    dayDate: "2023-09-02",
+    dayName: "SATURDAY",
+    shifts: [
+      { shiftStart: "05:00:00", shiftTime: "13:00:00", workerNeeded: 3 },
+      { shiftStart: "13:00:00", shiftEnd: "21:00:00", workerNeeded: 3 },
+      { shiftStart: "21:00:00", shiftEnd: "05:00:00", workerNeeded: 3},
+    ],
+  },
+];
+
+// dayDate: "2024-02-16";
+// dayName: "Sunday";
+// shiftEnd: "13:00:00";
+// shiftStart: "05:00:00";
+// workerNeeded: 3;

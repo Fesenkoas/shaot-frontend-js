@@ -53,7 +53,7 @@
 .shiftTime > p {
   white-space: nowrap;
   line-height: 24px;
-  font-weight: 300;
+  font-weight: bold;
   --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y))
     rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))

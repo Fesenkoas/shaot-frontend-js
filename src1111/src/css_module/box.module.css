@@ -1,0 +1,86 @@
+.activeBox {
+  position: relative;
+  background-color: white;
+  height: 430px;
+  border: 1px solid #1f8a83;
+  border-radius: 8px;
+  width: 410px;
+}
+
+.inactiveBox {
+  position: relative;
+  background-color: white;
+  height: 430px;
+  border: 1px solid #1f8a83;
+  border-radius: 8px;
+  width: 110px;
+}
+
+.boxHeader {
+  background-color: #1f8a83;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  height: 56px;
+}
+
+.boxHeaderText {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.shift {
+  display: flex;
+  flex-direction: column;
+}
+
+.shiftTime {
+  background-color: #D9DCE4;
+  height: 115px;
+  width: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-end-end-radius: 8px;
+  border-top-right-radius: 8px;
+  color: white;
+  white-space: nowrap;
+}
+
+.shiftTime > p {
+  white-space: nowrap;
+  line-height: 24px;
+  font-weight: 300;
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y))
+    rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.shiftTime > span {
+  font-weight: 300;
+}
+
+.workerNames {
+  direction: rtl;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-right: 8px;
+}
+
+.placeholder,
+.workers {
+  display: flex;
+  margin-top: 8px;
+  align-items: center;
+}
+.placeholder > button,
+.workers > button {
+  width: 26px;
+  height: 26px;
+  margin-left: 5px;
+}

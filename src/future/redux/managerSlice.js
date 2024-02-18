@@ -4,7 +4,7 @@ const initialState = {
   loading: false,
   company: [],
   schedule: [],
-  configurate: {},
+  configurate: null,
   checkDay: [],
   weekNames: [],
 };
@@ -28,8 +28,8 @@ const managerSlice = createSlice({
     },
     weekConfigurate(state, action) {
       state.loading = false;
-      state.checkDay = action.payload.workDays;
       state.configurate = action.payload;
+      state.checkDay = action.payload.workDays;
       state.loading = true;
     },
     weekNames(state, action) {
